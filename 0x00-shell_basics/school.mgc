@@ -1,0 +1,3 @@
+#!/bin/bash
+string SCHOOL data
+!:mime vi school.mgc
