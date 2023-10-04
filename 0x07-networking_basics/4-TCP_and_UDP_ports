@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#only shows listening sockets and shows the PID
+listening_ports=$(netstat -tuln | awk '/^tcp/ && /LISTEN/ {print $4}')
+
+for port in $listening_ports;
+do
+port_number=$(echo "$port" | awk -F: '{print $NF}')
+pid_program=$(lsof -i :$port_number -n -P -t)
+program_name=$(ps -p "$pid_program" -o comm=)
+ echo "Port: $port_number, PID: $pid_program, Program Name: $program_name"
+done
