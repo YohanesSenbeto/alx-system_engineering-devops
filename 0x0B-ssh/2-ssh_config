@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is creates the SSH configuration
+
+echo "Host 34.229.66.177
+   IdentityFile ~/.ssh/school
+    PreferredAuthentications publickey
+    PasswordAuthentication no" > ~/.ssh/config
+
