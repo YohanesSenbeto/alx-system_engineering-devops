@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-# Script that installs the Nginx server and redirects /redirect_me
+#!usr/bin/env bash
+# Script that installs the  Nginx server and redirects /redirect_me
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
