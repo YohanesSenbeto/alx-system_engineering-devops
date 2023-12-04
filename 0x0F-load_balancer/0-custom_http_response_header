@@ -1,0 +1,37 @@
+# File paths
+FILE="/etc/nginx/sites-available/default"
+ERRORFILE="/usr/share/nginx/html/404error.html"
+
+# Nginx configurations
+REDIRECT="\n\tlocation /redirect_me {\n\t\treturn 301 https://youtu.be/dQw4w9WgXcQ;\n\t}\n"
+ERRORREDIRECT="\n\terror_page 404 /404error.html;\n\tlocation = /404error.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
+CUSTOMHEADER='\n\tadd_header X-Served-By $hostname;\n'
+
+# Strings
+STRING="Hello World!"
+FOUR="Ceci n'est pas une page"
+
+# Update and install nginx
+apt-get -y update
+apt-get -y install nginx
+
+# Allow Nginx HTTP
+ufw allow 'Nginx HTTP'
+
+# Set index file content
+echo "$STRING" > /var/www/html/index.nginx-debian.html
+
+# Add redirect configuration to nginx
+sed -i "37i\ $REDIRECT" "$FILE"
+
+# Set error file content
+echo "$FOUR" > "$ERRORFILE"
+
+# Add error redirect configuration to nginx
+sed -i "37i\ $ERRORREDIRECT" "$FILE"
+
+# Add custom header configuration to nginx
+sed -i "37i\ $CUSTOMHEADER" "$FILE"
+
+# Restart nginx service
+service nginx restart
