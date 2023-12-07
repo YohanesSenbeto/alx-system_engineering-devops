@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script updates package lists, installs debugging tools, and configures Nginx to listen on port 80
+
+apt-get update
+apt-get install -y net-tools lsof
+service nginx stop 2>/dev/null
+sed -i '/listen\s*80;/c\    listen 80;' /etc/nginx/sites-available/default
+service nginx start
+
