@@ -1,42 +1,25 @@
-Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
-Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
-Hit:3 https://cli.github.com/packages focal InRelease
-Hit:4 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
-Ign:5 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal InRelease
-Hit:6 http://ppa.launchpad.net/vbernat/haproxy-2.8/ubuntu focal InRelease
-Hit:7 https://deb.nodesource.com/node_14.x focal InRelease
-Get:8 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
-Hit:9 http://archive.ubuntu.com/ubuntu focal-backports InRelease
-Err:10 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal Release
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
+Ign:3 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal InRelease
+Hit:4 http://ppa.launchpad.net/vbernat/haproxy-2.8/ubuntu focal InRelease
+Hit:5 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:6 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Err:8 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal Release
   404  Not Found [IP: 185.125.190.80 80]
-Get:11 https://download.docker.com/linux/ubuntu focal InRelease [57.7 kB]
-Get:12 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [3,238 kB]
-Get:13 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1,146 kB]
-Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [3,726 kB]
-Get:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1,442 kB]
+Hit:9 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:10 https://cli.github.com/packages focal InRelease
+Hit:11 https://deb.nodesource.com/node_14.x focal InRelease
 Reading package lists...
 E: The repository 'http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal Release' does not have a Release file.
 Reading package lists...
 Building dependency tree...
 Reading state information...
+net-tools is already the newest version (1.60+git20180626.aebd88e-1ubuntu1).
 lsof is already the newest version (4.93.2+dfsg-1ubuntu0.20.04.1).
-The following NEW packages will be installed:
-  net-tools
-0 upgraded, 1 newly installed, 0 to remove and 4 not upgraded.
-Need to get 196 kB of archives.
-After this operation, 864 kB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 net-tools amd64 1.60+git20180626.aebd88e-1ubuntu1 [196 kB]
-debconf: delaying package configuration, since apt-utils is not installed
-Fetched 196 kB in 0s (1,136 kB/s)
-Selecting previously unselected package net-tools.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 85729 files and directories currently installed.)
-Preparing to unpack .../net-tools_1.60+git20180626.aebd88e-1ubuntu1_amd64.deb ...
-Unpacking net-tools (1.60+git20180626.aebd88e-1ubuntu1) ...
-Setting up net-tools (1.60+git20180626.aebd88e-1ubuntu1) ...
-Processing triggers for man-db (2.9.1-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
 Nginx is already running.
 Updated Nginx configuration to listen on port 80.
  * Restarting nginx nginx
    ...done.
-nginx   635 root    6u  IPv4 606486361      0t0  TCP *:http (LISTEN)
 Nginx is now listening on port 80.

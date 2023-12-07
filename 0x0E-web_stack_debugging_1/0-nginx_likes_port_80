@@ -1,41 +1,31 @@
 #!/usr/bin/env bash
+# Script: 0-nginx_likes_port_80
+# Description: Ensures Nginx listens on port 80
 
-# Script: debug_nginx.sh
-# Description: Debug Nginx configuration to ensure it's listening on port 80
+apt-get update
+apt-get install -y net-tools lsof
 
-# Update package lists
-sudo apt-get update
-
-# Install necessary tools for debugging
-sudo apt-get install -y net-tools lsof
-
-# Check if Nginx is running and listening on port 80
-nginx_process=$(ps aux | grep 'nginx: master process' | grep -v grep)
-nginx_status=$?
-
-if [ $nginx_status -ne 0 ]; then
+if ! pgrep nginx &>/dev/null; then
     echo "Nginx is not running. Starting Nginx..."
-    sudo service nginx start
+    service nginx start
 else
     echo "Nginx is already running."
 fi
 
-# Ensure Nginx is configured to listen on port 80
 nginx_config="/etc/nginx/sites-available/default"
 
 if [ -f "$nginx_config" ]; then
-    sudo sed -i '/listen\s*80;/c\    listen 80;' "$nginx_config"
+    sed -i '/listen\s*80;/c\    listen 80;' "$nginx_config"
     echo "Updated Nginx configuration to listen on port 80."
 else
     echo "Nginx configuration file not found at $nginx_config."
 fi
 
-# Restart Nginx to apply the changes
-sudo service nginx restart
+service nginx restart
 
-# Check if Nginx is now listening on port 80
-if lsof -i :80 | grep LISTEN; then
+if lsof -i :80 | grep LISTEN &>/dev/null; then
     echo "Nginx is now listening on port 80."
 else
     echo "Nginx is still not listening on port 80. Please check the configuration."
 fi
+
