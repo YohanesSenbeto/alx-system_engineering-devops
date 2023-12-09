@@ -1,25 +1,2 @@
-Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
-Hit:2 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
-Ign:3 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal InRelease
-Hit:4 http://ppa.launchpad.net/vbernat/haproxy-2.8/ubuntu focal InRelease
-Hit:5 https://download.docker.com/linux/ubuntu focal InRelease
-Hit:6 http://archive.ubuntu.com/ubuntu focal InRelease
-Hit:7 http://archive.ubuntu.com/ubuntu focal-updates InRelease
-Err:8 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal Release
-  404  Not Found [IP: 185.125.190.80 80]
-Hit:9 http://archive.ubuntu.com/ubuntu focal-backports InRelease
-Hit:10 https://cli.github.com/packages focal InRelease
-Hit:11 https://deb.nodesource.com/node_14.x focal InRelease
-Reading package lists...
-E: The repository 'http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu focal Release' does not have a Release file.
-Reading package lists...
-Building dependency tree...
-Reading state information...
-net-tools is already the newest version (1.60+git20180626.aebd88e-1ubuntu1).
-lsof is already the newest version (4.93.2+dfsg-1ubuntu0.20.04.1).
-0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
-Nginx is already running.
-Updated Nginx configuration to listen on port 80.
  * Restarting nginx nginx
-   ...done.
-Nginx is now listening on port 80.
+   ...fail!

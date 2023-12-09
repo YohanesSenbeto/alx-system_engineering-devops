@@ -1,31 +1,9 @@
 #!/usr/bin/env bash
-# Script: 0-nginx_likes_port_80
-# Description: Ensures Nginx listens on port 80
+#Configures an Nginx server to listen on port 80.
 
-apt-get update
-apt-get install -y net-tools lsof
-
-if ! pgrep nginx &>/dev/null; then
-    echo "Nginx is not running. Starting Nginx..."
-    service nginx start
-else
-    echo "Nginx is already running."
-fi
-
-nginx_config="/etc/nginx/sites-available/default"
-
-if [ -f "$nginx_config" ]; then
-    sed -i '/listen\s*80;/c\    listen 80;' "$nginx_config"
-    echo "Updated Nginx configuration to listen on port 80."
-else
-    echo "Nginx configuration file not found at $nginx_config."
-fi
-
+#remove the default Nginx configuration file
+rm /etc/nginx/sites-enabled/default
+#configure Nginx to listen on port 80 for all active IPV4 IPs
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+# restart nginx
 service nginx restart
-
-if lsof -i :80 | grep LISTEN &>/dev/null; then
-    echo "Nginx is now listening on port 80."
-else
-    echo "Nginx is still not listening on port 80. Please check the configuration."
-fi
-
