@@ -1,0 +1,22 @@
+
+What happens when you type "https://www.google.com" and press Enter?
+Listed as the below: 
+1.	DNS Request:
+Upon typing the URL, the browser initiates a Domain Name System (DNS) request to resolve the domain name (www.google.com) into an IP address.
+DNS servers are queried in a hierarchical manner until the correct IP address for the domain is found.
+2.	TCP/IP:
+With the IP address obtained, the browser establishes a Transmission Control Protocol (TCP) connection using the Internet Protocol (IP) to communicate with Google's servers.
+3.	Firewall:
+The request passes through firewalls, which act as security barriers, checking for permitted traffic and potential threats.
+4.	HTTPS/SSL:
+Encrypted communication begins through the Hypertext Transfer Protocol Secure (HTTPS) protocol, ensuring a secure connection.
+SSL/TLS certificates authenticate the server's identity, encrypting the data exchanged between the browser and the server.
+5.	Load-Balancer:
+If the destination server employs load-balancing mechanisms, the request might be directed to different servers to distribute traffic and maintain optimal performance.
+6.	Web Server:
+At Google's end, the request reaches a web server responsible for handling HTTP requests.
+The server processes the request, retrieving the requested web page or resources.
+7.	Application Server:
+In complex web applications, an application server might be involved in processing dynamic content or executing specific functionalities.
+8.	Database:
+For data-driven websites, the application server interacts with databases, fetching or updating information as required.
