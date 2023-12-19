@@ -1,0 +1,26 @@
+# MySQL configuration file
+
+[mysqld]
+# Set the process ID file path
+pid-file = /var/run/mysqld/mysqld.pid
+
+# Set the socket file path
+socket = /var/run/mysqld/mysqld.sock
+
+# Set the data directory path
+datadir = /var/lib/mysql
+
+# Set the error log file path
+log-error = /var/log/mysql/error.log
+
+# Disable symbolic links
+symbolic-links = 0
+
+# Set the server ID
+server-id = 1
+
+# Set the binary log file path
+log_bin = /var/log/mysql/mysql-bin.log
+
+# Only include the 'tyrell_corp' database in binary logging
+binlog_do_db = tyrell_corp
