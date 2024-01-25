@@ -1,5 +1,5 @@
 # Fixing the number of failed requests to get 0.
 exec { 'fix--for-nginx':
-  command => "sed -i 's/worker_processes 4;/worker_processes 7;/g' /etc/nginx/nginx.conf; sudo service nginx restart",
-  path    => ['/bin', '/usr/bin', '/usr/sbin']
+  command => "/mnt/ubuntu/sbin/start-stop-daemon --name nginx --stop; /mnt/ubuntu/sbin/start-stop-daemon --name nginx --start --exec /usr/sbin/nginx -- -c /etc/nginx/nginx.conf",
+  path    => ['/bin', '/usr/bin', '/usr/sbin', '/sbin', '/mnt/ubuntu/sbin'],
 }
